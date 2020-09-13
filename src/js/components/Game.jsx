@@ -31,6 +31,7 @@ class Game extends Component {
 		};
 		this.roll = this.roll.bind(this);
 		this.doScore = this.doScore.bind(this);
+		this.toggleLocked = this.toggleLocked.bind(this);
 	}
 
 	roll(evt) {
@@ -44,7 +45,7 @@ class Game extends Component {
 		}));
 	}
 
-	toggleLocked = idx => {
+	toggleLocked(idx) {
 		// toggle whether idx is in locked or not
 
 		this.setState(st => ({
@@ -54,7 +55,7 @@ class Game extends Component {
 				...st.locked.slice(idx + 1)
 			]
 		}));
-	};
+	}
 
 	doScore(rulename, ruleFn) {
 		// evaluate this ruleFn with the dice and score this rulename
