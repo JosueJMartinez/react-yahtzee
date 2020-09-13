@@ -12,7 +12,13 @@ class RuleRow extends Component {
 				disabled={this.props.disableScore}
 			>
 				<td className="RuleRow-name">{this.props.name}</td>
-				<td className="RuleRow-score">{this.props.score}</td>
+				<td className="RuleRow-score">
+					{this.props.disableScore ? (
+						this.props.score
+					) : (
+						this.props.description
+					)}
+				</td>
 			</tr>
 		);
 	}
