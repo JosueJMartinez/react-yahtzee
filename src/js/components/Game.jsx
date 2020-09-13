@@ -27,6 +27,21 @@ class Game extends Component {
 				largeStraight: undefined,
 				yahtzee: undefined,
 				chance: undefined
+			},
+			disableScores: {
+				ones: false,
+				twos: false,
+				threes: false,
+				fours: false,
+				fives: false,
+				sixes: false,
+				threeOfKind: false,
+				fourOfKind: false,
+				fullHouse: false,
+				smallStraight: false,
+				largeStraight: false,
+				yahtzee: false,
+				chance: false
 			}
 		};
 		this.roll = this.roll.bind(this);
@@ -59,12 +74,15 @@ class Game extends Component {
 
 	doScore(rulename, ruleFn) {
 		// evaluate this ruleFn with the dice and score this rulename
-		this.setState(st => ({
-			scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
-			rollsLeft: NUM_ROLLS,
-			locked: Array(NUM_DICE).fill(false)
-		}));
-		this.roll();
+		if (!this.state.disableScores[rulename]) {
+			this.setState(st => ({
+				scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
+				rollsLeft: NUM_ROLLS,
+				locked: Array(NUM_DICE).fill(false),
+				disableScores: { ...st.disableScores, [rulename]: true }
+			}));
+			this.roll();
+		}
 	}
 
 	render() {
@@ -90,7 +108,11 @@ class Game extends Component {
 						</div>
 					</section>
 				</header>
-				<ScoreTable doScore={this.doScore} scores={this.state.scores} />
+				<ScoreTable
+					doScore={this.doScore}
+					scores={this.state.scores}
+					disableScores={this.state.disableScores}
+				/>
 			</div>
 		);
 	}
