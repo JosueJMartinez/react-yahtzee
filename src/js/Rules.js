@@ -61,9 +61,7 @@ class FullHouse extends Rule {
 	evalRoll = dice => {
 		//check make sure freq arr is length of 2 then check first freq see if it has a value of 2 or 3
 		const arr = this.freq(dice);
-		return arr.length === 2 && (arr[0] === 2 || arr[0] === 3)
-			? this.score
-			: 0;
+		return arr.includes(2) && arr.includes(3) ? this.score : 0;
 	};
 }
 
@@ -75,9 +73,8 @@ class SmallStraight extends Rule {
 
 		// small straight must have 4 different dice & can have a combination of 1-4, 2-5, or 3-6
 		return d.size >= 4 &&
-		((d.has(1) && d.has(2) && d.has(3) && d.has(4)) ||
-			(d.has(2) && d.has(3) && d.has(4) && d.has(5)) ||
-			(d.has(3) && d.has(4) && d.has(5) && d.has(6)))
+		((d.has(2) && d.has(3) && d.has(4) && (d.has(1) || d.has(5))) ||
+			(d.has(3) && d.has(4) && d.has(5) && (d.has(2) || d.has(6))))
 			? this.score
 			: 0;
 	};

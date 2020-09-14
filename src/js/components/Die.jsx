@@ -5,9 +5,11 @@ class Die extends Component {
 	static defaultProps = {
 		die: [ 'one', 'two', 'three', 'four', 'five', 'six' ]
 	};
+
 	handleClick = e => {
 		this.props.handleClick(this.props.idx);
 	};
+
 	render() {
 		return (
 			<button
