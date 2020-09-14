@@ -92,6 +92,14 @@ class Game extends Component {
 		}
 	}
 
+	buttonValue = () => {
+		if (this.state.isRolling) return 'Rolling...';
+		let button = `${this.state.rollsLeft}`;
+		if (this.state.rollsLeft > 1) return `${button} rolls left`;
+		if (this.state.rollsLeft > 0) return `${button} roll left`;
+		return '0 rolls left';
+	};
+
 	render() {
 		return (
 			<div className="Game">
@@ -114,7 +122,7 @@ class Game extends Component {
 								}
 								onClick={this.animateRoll}
 							>
-								{this.state.rollsLeft} Rerolls Left
+								{this.buttonValue()}
 							</button>
 						</div>
 					</section>
