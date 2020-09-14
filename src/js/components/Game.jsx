@@ -34,11 +34,14 @@ class Game extends Component {
 		this.roll = this.roll.bind(this);
 		this.doScore = this.doScore.bind(this);
 		this.toggleLocked = this.toggleLocked.bind(this);
+		this.buttonValue = this.buttonValue.bind(this);
+		this.calcTotalScore = this.calcTotalScore.bind(this);
 	}
 
 	componentDidMount() {
 		this.animateRoll();
 	}
+
 	animateRoll = () => {
 		this.setState(
 			st => ({
@@ -51,8 +54,6 @@ class Game extends Component {
 	};
 
 	roll(evt) {
-		// setState to roll dice
-
 		// delay to setState after 1 sec till animation finished
 		this.setState(st => ({
 			dice: st.dice.map(
@@ -92,13 +93,25 @@ class Game extends Component {
 		}
 	}
 
-	buttonValue = () => {
+	buttonValue() {
 		if (this.state.isRolling) return 'Rolling...';
 		let button = `${this.state.rollsLeft}`;
 		if (this.state.rollsLeft > 1) return `${button} rolls left`;
 		if (this.state.rollsLeft > 0) return `${button} roll left`;
 		return '0 rolls left';
-	};
+	}
+
+	calcTotalScore() {
+		const scores = Object.values(this.state.scores);
+		let total = 0;
+		scores.forEach(score => {
+			if (score !== undefined) {
+				total += score;
+			}
+		});
+		console.log(total);
+		return total;
+	}
 
 	render() {
 		return (
@@ -132,6 +145,9 @@ class Game extends Component {
 					scores={this.state.scores}
 					isRolling={this.state.isRolling}
 				/>
+				<h2 className="Game-score">
+					Total Score: {this.calcTotalScore()}
+				</h2>
 			</div>
 		);
 	}
