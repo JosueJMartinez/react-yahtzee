@@ -3,21 +3,24 @@ import '../../css/RuleRow.css';
 
 class RuleRow extends Component {
 	render() {
+		const {
+			disableScore,
+			isRolling,
+			doScore,
+			name,
+			description,
+			score
+		} = this.props;
 		return (
 			<tr
-				className={`RuleRow RuleRow-${this.props.disableScore ||
-				this.props.isRolling
+				className={`RuleRow RuleRow-${disableScore || isRolling
 					? 'disabled'
 					: 'active'}`}
-				onClick={this.props.doScore}
+				onClick={doScore}
 			>
-				<td className="RuleRow-name">{this.props.name}</td>
+				<td className="RuleRow-name">{name}</td>
 				<td className="RuleRow-score">
-					{this.props.disableScore ? (
-						this.props.score
-					) : (
-						this.props.description
-					)}
+					{disableScore ? score : description}
 				</td>
 			</tr>
 		);
