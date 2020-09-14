@@ -28,21 +28,7 @@ class Game extends Component {
 				yahtzee: undefined,
 				chance: undefined
 			},
-			disableScores: {
-				ones: false,
-				twos: false,
-				threes: false,
-				fours: false,
-				fives: false,
-				sixes: false,
-				threeOfKind: false,
-				fourOfKind: false,
-				fullHouse: false,
-				smallStraight: false,
-				largeStraight: false,
-				yahtzee: false,
-				chance: false
-			},
+
 			isRolling: false
 		};
 		this.roll = this.roll.bind(this);
@@ -82,7 +68,10 @@ class Game extends Component {
 
 	doScore(rulename, ruleFn) {
 		// evaluate this ruleFn with the dice and score this rulename
-		if (!this.state.disableScores[rulename] && !this.state.isRolling) {
+		if (
+			this.state.scores[rulename] === undefined &&
+			!this.state.isRolling
+		) {
 			this.setState(st => ({
 				scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
 				rollsLeft: NUM_ROLLS,
@@ -122,7 +111,6 @@ class Game extends Component {
 				<ScoreTable
 					doScore={this.doScore}
 					scores={this.state.scores}
-					disableScores={this.state.disableScores}
 					isRolling={this.state.isRolling}
 				/>
 			</div>
