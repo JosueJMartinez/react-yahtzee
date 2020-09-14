@@ -88,7 +88,7 @@ class Game extends Component {
 				locked: Array(NUM_DICE).fill(false),
 				disableScores: { ...st.disableScores, [rulename]: true }
 			}));
-			this.roll();
+			this.animateRoll();
 		}
 	}
 
