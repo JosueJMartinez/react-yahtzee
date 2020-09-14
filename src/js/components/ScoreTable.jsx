@@ -31,42 +31,42 @@ class ScoreTable extends Component {
 								name="Ones"
 								score={scores.ones}
 								doScore={evt => doScore('ones', ones.evalRoll)}
-								description="1 point per 1"
+								description={ones.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Twos"
 								score={scores.twos}
 								doScore={evt => doScore('twos', twos.evalRoll)}
-								description="2 points per 2"
+								description={twos.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Threes"
 								score={scores.threes}
 								doScore={evt => doScore('threes', threes.evalRoll)}
-								description="3 points per 3"
+								description={threes.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Fours"
 								score={scores.fours}
 								doScore={evt => doScore('fours', fours.evalRoll)}
-								description="4 points per 4"
+								description={fours.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Fives"
 								score={scores.fives}
 								doScore={evt => doScore('fives', fives.evalRoll)}
-								description="5 points per 5"
+								description={fives.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Sixes"
 								score={scores.sixes}
 								doScore={evt => doScore('sixes', sixes.evalRoll)}
-								description="6 points per 6"
+								description={sixes.description}
 								isRolling={isRolling}
 							/>
 						</tbody>
@@ -81,21 +81,21 @@ class ScoreTable extends Component {
 								score={scores.threeOfKind}
 								doScore={evt =>
 									doScore('threeOfKind', threeOfKind.evalRoll)}
-								description="Sum all dice if 3 are the same"
+								description={threeOfKind.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Four of Kind"
 								score={scores.fourOfKind}
 								doScore={evt => doScore('fourOfKind', fourOfKind.evalRoll)}
-								description="Sum all dice if 4 are the same"
+								description={fourOfKind.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Full House"
 								score={scores.fullHouse}
 								doScore={evt => doScore('fullHouse', fullHouse.evalRoll)}
-								description="25 points for a fullHouse"
+								description={fullHouse.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
@@ -103,7 +103,7 @@ class ScoreTable extends Component {
 								score={scores.smallStraight}
 								doScore={evt =>
 									doScore('smallStraight', smallStraight.evalRoll)}
-								description="30 points for a Small Straight"
+								description={smallStraight.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
@@ -111,21 +111,21 @@ class ScoreTable extends Component {
 								score={scores.largeStraight}
 								doScore={evt =>
 									doScore('largeStraight', largeStraight.evalRoll)}
-								description="40 points for a Large Straight"
+								description={largeStraight.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Yahtzee"
 								score={scores.yahtzee}
 								doScore={evt => doScore('yahtzee', yahtzee.evalRoll)}
-								description="50 points for yahtzee"
+								description={yahtzee.description}
 								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Chance"
 								score={scores.chance}
 								doScore={evt => doScore('chance', chance.evalRoll)}
-								description="Sum of all dice"
+								description={chance.description}
 								isRolling={isRolling}
 							/>
 						</tbody>
