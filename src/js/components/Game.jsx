@@ -82,7 +82,7 @@ class Game extends Component {
 
 	doScore(rulename, ruleFn) {
 		// evaluate this ruleFn with the dice and score this rulename
-		if (!this.state.disableScores[rulename]) {
+		if (!this.state.disableScores[rulename] && !this.state.isRolling) {
 			this.setState(st => ({
 				scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
 				rollsLeft: NUM_ROLLS,

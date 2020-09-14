@@ -9,7 +9,7 @@ class RuleRow extends Component {
 					? 'disabled'
 					: 'active'}`}
 				onClick={this.props.doScore}
-				disabled={this.props.disableScore}
+				disabled={this.props.disableScore || this.props.isRolling}
 			>
 				<td className="RuleRow-name">{this.props.name}</td>
 				<td className="RuleRow-score">
