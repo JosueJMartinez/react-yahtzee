@@ -123,6 +123,7 @@ class Game extends Component {
 					doScore={this.doScore}
 					scores={this.state.scores}
 					disableScores={this.state.disableScores}
+					isRolling={this.state.isRolling}
 				/>
 			</div>
 		);

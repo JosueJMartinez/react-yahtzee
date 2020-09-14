@@ -19,7 +19,7 @@ import {
 
 class ScoreTable extends Component {
 	render() {
-		const { scores, doScore, disableScores } = this.props;
+		const { scores, doScore, disableScores, isRolling } = this.props;
 
 		return (
 			<div className="ScoreTable">
@@ -33,6 +33,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('ones', ones.evalRoll)}
 								description="1 point per 1"
 								disableScore={disableScores.ones}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Twos"
@@ -40,6 +41,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('twos', twos.evalRoll)}
 								description="2 points per 2"
 								disableScore={disableScores.twos}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Threes"
@@ -47,6 +49,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('threes', threes.evalRoll)}
 								description="3 points per 3"
 								disableScore={disableScores.threes}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Fours"
@@ -54,6 +57,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('fours', fours.evalRoll)}
 								description="4 points per 4"
 								disableScore={disableScores.fours}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Fives"
@@ -61,6 +65,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('fives', fives.evalRoll)}
 								description="5 points per 5"
 								disableScore={disableScores.fives}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Sixes"
@@ -68,6 +73,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('sixes', sixes.evalRoll)}
 								description="6 points per 6"
 								disableScore={disableScores.sixes}
+								isRolling={isRolling}
 							/>
 						</tbody>
 					</table>
@@ -83,6 +89,7 @@ class ScoreTable extends Component {
 									doScore('threeOfKind', threeOfKind.evalRoll)}
 								description="Sum all dice if 3 are the same"
 								disableScore={disableScores.threeOfKind}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Four of Kind"
@@ -90,6 +97,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('fourOfKind', fourOfKind.evalRoll)}
 								description="Sum all dice if 4 are the same"
 								disableScore={disableScores.fourOfKind}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Full House"
@@ -97,6 +105,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('fullHouse', fullHouse.evalRoll)}
 								description="25 points for a fullHouse"
 								disableScore={disableScores.fullHouse}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Small Straight"
@@ -105,6 +114,7 @@ class ScoreTable extends Component {
 									doScore('smallStraight', smallStraight.evalRoll)}
 								description="30 points for a Small Straight"
 								disableScore={disableScores.smallStraight}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Large Straight"
@@ -113,6 +123,7 @@ class ScoreTable extends Component {
 									doScore('largeStraight', largeStraight.evalRoll)}
 								description="40 points for a Large Straight"
 								disableScore={disableScores.largeStraight}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Yahtzee"
@@ -120,6 +131,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('yahtzee', yahtzee.evalRoll)}
 								description="50 points for yahtzee"
 								disableScore={disableScores.yahtzee}
+								isRolling={isRolling}
 							/>
 							<RuleRow
 								name="Chance"
@@ -127,6 +139,7 @@ class ScoreTable extends Component {
 								doScore={evt => doScore('chance', chance.evalRoll)}
 								description="Sum of all dice"
 								disableScore={disableScores.chance}
+								isRolling={isRolling}
 							/>
 						</tbody>
 					</table>

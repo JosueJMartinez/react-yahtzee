@@ -5,11 +5,11 @@ class RuleRow extends Component {
 	render() {
 		return (
 			<tr
-				className={`RuleRow RuleRow-${this.props.disableScore
+				className={`RuleRow RuleRow-${this.props.disableScore ||
+				this.props.isRolling
 					? 'disabled'
 					: 'active'}`}
 				onClick={this.props.doScore}
-				disabled={this.props.disableScore || this.props.isRolling}
 			>
 				<td className="RuleRow-name">{this.props.name}</td>
 				<td className="RuleRow-score">
