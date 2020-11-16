@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-yahtzee/static/css/main.170a34db.chunk.css",
+    "main.js": "/react-yahtzee/static/js/main.95df4d8a.chunk.js",
+    "main.js.map": "/react-yahtzee/static/js/main.95df4d8a.chunk.js.map",
+    "runtime-main.js": "/react-yahtzee/static/js/runtime-main.a76eb753.js",
+    "runtime-main.js.map": "/react-yahtzee/static/js/runtime-main.a76eb753.js.map",
+    "static/css/2.d1ac65a5.chunk.css": "/react-yahtzee/static/css/2.d1ac65a5.chunk.css",
+    "static/js/2.2dd09001.chunk.js": "/react-yahtzee/static/js/2.2dd09001.chunk.js",
+    "static/js/2.2dd09001.chunk.js.map": "/react-yahtzee/static/js/2.2dd09001.chunk.js.map",
+    "index.html": "/react-yahtzee/index.html",
+    "static/css/2.d1ac65a5.chunk.css.map": "/react-yahtzee/static/css/2.d1ac65a5.chunk.css.map",
+    "static/css/main.170a34db.chunk.css.map": "/react-yahtzee/static/css/main.170a34db.chunk.css.map",
+    "static/js/2.2dd09001.chunk.js.LICENSE.txt": "/react-yahtzee/static/js/2.2dd09001.chunk.js.LICENSE.txt",
+    "static/media/all.css": "/react-yahtzee/static/media/fa-solid-900.dfaa060a.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a76eb753.js",
+    "static/css/2.d1ac65a5.chunk.css",
+    "static/js/2.2dd09001.chunk.js",
+    "static/css/main.170a34db.chunk.css",
+    "static/js/main.95df4d8a.chunk.js"
+  ]
+}
