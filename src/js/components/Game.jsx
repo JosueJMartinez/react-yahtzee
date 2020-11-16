@@ -109,7 +109,6 @@ class Game extends Component {
 				total += score;
 			}
 		});
-		console.log(total);
 		return total;
 	}
 
